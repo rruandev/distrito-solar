@@ -216,44 +216,59 @@ nav {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  gap: 6px;
-  transform: perspective(700px) rotateX(14deg) rotateY(-16deg);
-  border-radius: 10px;
+  gap: 5px;
+  transform: perspective(700px) rotateX(18deg) rotateY(-18deg);
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,.4);
+  box-shadow: 0 40px 80px rgba(0,0,0,.55), 0 0 0 2px rgba(100,180,255,.15);
+  padding: 6px;
+  background: rgba(0,0,0,.3);
 }
 .panel-cell {
-  background: linear-gradient(135deg, #122d56 0%, #1e4f94 50%, #122d56 100%);
-  border: 1px solid rgba(80,140,230,.25);
-  border-radius: 3px;
+  background: linear-gradient(160deg, #2a6fc4 0%, #1a52a0 40%, #0d3474 100%);
+  border: 1.5px solid rgba(120,190,255,.45);
+  border-radius: 4px;
   aspect-ratio: 1.4;
   position: relative;
   overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.15);
 }
+/* linha horizontal interna (simula célula solar) */
 .panel-cell::before {
   content: '';
   position: absolute;
-  top: 35%; left: 0; right: 0;
-  height: 1px;
-  background: rgba(80,150,255,.18);
+  top: 38%; left: 4px; right: 4px;
+  height: 1.5px;
+  background: rgba(150,210,255,.35);
 }
+/* linha vertical interna */
 .panel-cell::after {
   content: '';
   position: absolute;
-  left: 50%; top: 0; bottom: 0;
-  width: 1px;
-  background: rgba(80,150,255,.18);
+  left: 50%; top: 4px; bottom: 4px;
+  width: 1.5px;
+  background: rgba(150,210,255,.35);
 }
+/* placa iluminada (reflexo do sol) */
 .panel-cell.lit {
-  background: linear-gradient(135deg, #1a3f7a 0%, #2a68c8 50%, #1a3f7a 100%);
-  border-color: rgba(100,180,255,.4);
+  background: linear-gradient(160deg, #4a9ae0 0%, #2c7acc 40%, #1555a8 100%);
+  border-color: rgba(160,220,255,.7);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.25), 0 0 10px rgba(100,180,255,.3);
 }
+.panel-cell.lit::before,
+.panel-cell.lit::after { background: rgba(200,235,255,.5); }
+
 .panel-glow {
   position: absolute;
-  top: -30px; right: -30px;
-  width: 180px; height: 180px;
-  background: radial-gradient(circle, rgba(245,196,0,.25) 0%, transparent 70%);
+  top: -50px; right: -40px;
+  width: 240px; height: 240px;
+  background: radial-gradient(circle, rgba(245,160,0,.35) 0%, rgba(245,196,0,.1) 40%, transparent 70%);
   pointer-events: none;
+  animation: pulso 3s ease-in-out infinite;
+}
+@keyframes pulso {
+  0%, 100% { opacity: .8; transform: scale(1); }
+  50%       { opacity: 1; transform: scale(1.08); }
 }
 
 /* Hero stats */
