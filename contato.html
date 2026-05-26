@@ -6,16 +6,19 @@
   <title>Contato e Orçamento — Distrito Solar</title>
   <meta name="description" content="Solicite seu orçamento gratuito de energia solar. Atendemos Brasília, DF e entorno." />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 <body>
 
   <header>
     <nav>
       <a href="index.html" class="logo">
-        <span class="logo-icon">☀️</span>
+        <span class="logo-icon"><i class="fa-solid fa-solar-panel"></i></span>
         Distrito<span>Solar</span>
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="sobre.html">Sobre nós</a></li>
@@ -26,7 +29,7 @@
     </nav>
   </header>
 
-  <section class="page-hero">
+  <section class="page-hero alt-bg">
     <div class="container">
       <p class="breadcrumb"><a href="index.html">Home</a> / Contato</p>
       <h1>Solicite seu Orçamento</h1>
@@ -35,71 +38,70 @@
   </section>
 
   <!-- CONTATO -->
-  <section class="section">
+  <section class="section section-alt">
     <div class="container">
       <div class="contato-grid">
 
         <!-- INFO -->
         <div class="contato-info">
-          <div class="linha-amarela" style="margin:0 0 16px;"></div>
+          <div class="linha-amarela" style="margin:0 0 14px;"></div>
           <h2>Fale com a gente</h2>
           <p>Nossa equipe está pronta para analisar seu caso e apresentar a melhor solução em energia solar. O orçamento é gratuito e sem compromisso.</p>
 
           <div class="contato-item">
-            <span class="ci-icon">📞</span>
-            <div>
-              <strong>Telefone / WhatsApp</strong><br>
-              (61) 9 9999-9999
+            <span class="ci-icon"><i class="fa-solid fa-phone"></i></span>
+            <div class="ci-txt">
+              <strong>Telefone / WhatsApp</strong>
+              <span>(61) 9 9999-9999</span>
             </div>
           </div>
           <div class="contato-item">
-            <span class="ci-icon">✉️</span>
-            <div>
-              <strong>E-mail</strong><br>
-              contato@distritosolar.com.br
+            <span class="ci-icon"><i class="fa-solid fa-envelope"></i></span>
+            <div class="ci-txt">
+              <strong>E-mail</strong>
+              <span>contato@distritosolar.com.br</span>
             </div>
           </div>
           <div class="contato-item">
-            <span class="ci-icon">📍</span>
-            <div>
-              <strong>Área de atendimento</strong><br>
-              Brasília, DF e municípios do entorno
+            <span class="ci-icon"><i class="fa-solid fa-location-dot"></i></span>
+            <div class="ci-txt">
+              <strong>Área de atendimento</strong>
+              <span>Brasília, DF e municípios do entorno</span>
             </div>
           </div>
           <div class="contato-item">
-            <span class="ci-icon">🕐</span>
-            <div>
-              <strong>Horário de atendimento</strong><br>
-              Seg a Sex: 8h às 18h | Sáb: 8h às 12h
+            <span class="ci-icon"><i class="fa-regular fa-clock"></i></span>
+            <div class="ci-txt">
+              <strong>Horário de atendimento</strong>
+              <span>Seg a Sex: 8h às 18h | Sáb: 8h às 12h</span>
             </div>
           </div>
 
           <div style="margin-top:28px;">
             <a href="https://wa.me/5561999999999?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20energia%20solar."
-               class="btn btn-primary"
-               target="_blank" rel="noopener">
-              💬 Chamar no WhatsApp
+               class="btn btn-primary" target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i>
+              Chamar no WhatsApp
             </a>
           </div>
 
-          <!-- Diferenciais rápidos -->
-          <div style="margin-top:36px;">
+          <div style="margin-top:32px; display:flex; flex-direction:column; gap:10px;">
             <div class="valor">
-              <span class="valor-icon">✅</span>
+              <span class="valor-icon"><i class="fa-solid fa-circle-check"></i></span>
               <div class="valor-txt">
                 <strong>Orçamento 100% gratuito</strong>
                 <p>Sem taxa de visita técnica ou análise.</p>
               </div>
             </div>
-            <div class="valor" style="margin-top:10px;">
-              <span class="valor-icon">⚡</span>
+            <div class="valor">
+              <span class="valor-icon"><i class="fa-solid fa-bolt"></i></span>
               <div class="valor-txt">
                 <strong>Resposta rápida</strong>
                 <p>Retornamos em até 24 horas úteis.</p>
               </div>
             </div>
-            <div class="valor" style="margin-top:10px;">
-              <span class="valor-icon">🔒</span>
+            <div class="valor">
+              <span class="valor-icon"><i class="fa-solid fa-lock"></i></span>
               <div class="valor-txt">
                 <strong>Seus dados são protegidos</strong>
                 <p>Não compartilhamos suas informações com terceiros.</p>
@@ -110,12 +112,8 @@
 
         <!-- FORMULÁRIO -->
         <div class="form-card">
-          <h3 style="font-size:1.3rem; font-weight:800; color:var(--azul-escuro); margin-bottom:6px;">
-            Preencha o formulário
-          </h3>
-          <p style="color:var(--cinza-txt); font-size:.9rem; margin-bottom:24px;">
-            Receba uma proposta personalizada no seu e-mail
-          </p>
+          <h3>Preencha o formulário</h3>
+          <p>Receba uma proposta personalizada no seu e-mail</p>
 
           <form id="formOrcamento" novalidate>
             <div class="form-row">
@@ -162,16 +160,18 @@
             </div>
 
             <button type="submit" class="btn btn-primary btn-full">
-              ☀️ Solicitar orçamento gratuito
+              <i class="fa-solid fa-paper-plane"></i>
+              Solicitar orçamento gratuito
             </button>
 
-            <p style="font-size:.78rem; color:var(--cinza-txt); text-align:center; margin-top:12px;">
+            <p style="font-size:.76rem; color:var(--cinza-txt); text-align:center; margin-top:12px;">
+              <i class="fa-solid fa-lock" style="margin-right:4px;"></i>
               Seus dados estão seguros. Não fazemos spam.
             </p>
           </form>
 
           <div class="form-sucesso" id="formSucesso">
-            <div style="font-size:3rem; margin-bottom:8px;">✅</div>
+            <div class="sucesso-icon"><i class="fa-solid fa-circle-check"></i></div>
             <h3>Mensagem enviada com sucesso!</h3>
             <p>Em breve nossa equipe entrará em contato com sua proposta personalizada. Obrigado!</p>
           </div>
@@ -183,22 +183,25 @@
   <footer>
     <div class="footer-grid">
       <div>
-        <div class="footer-logo">☀️ Distrito<span>Solar</span></div>
+        <div class="footer-logo">
+          <span class="footer-logo-icon"><i class="fa-solid fa-solar-panel"></i></span>
+          Distrito<span>Solar</span>
+        </div>
         <p class="footer-desc">Energia solar de qualidade para Brasília, DF e entorno. Mais de 5 anos gerando economia e sustentabilidade.</p>
       </div>
       <div class="footer-col">
         <h4>Navegação</h4>
-        <a href="index.html">Home</a>
-        <a href="sobre.html">Sobre nós</a>
-        <a href="servicos.html">Serviços</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="contato.html">Contato</a>
+        <a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a>
+        <a href="sobre.html"><i class="fa-solid fa-chevron-right"></i> Sobre nós</a>
+        <a href="servicos.html"><i class="fa-solid fa-chevron-right"></i> Serviços</a>
+        <a href="projetos.html"><i class="fa-solid fa-chevron-right"></i> Projetos</a>
+        <a href="contato.html"><i class="fa-solid fa-chevron-right"></i> Contato</a>
       </div>
       <div class="footer-col">
         <h4>Contato</h4>
-        <a href="tel:+5561999999999">📞 (61) 9 9999-9999</a>
-        <a href="mailto:contato@distritosolar.com.br">✉️ contato@distritosolar.com.br</a>
-        <a href="#">📍 Brasília, DF e entorno</a>
+        <a href="tel:+5561999999999"><i class="fa-solid fa-phone"></i> (61) 9 9999-9999</a>
+        <a href="mailto:contato@distritosolar.com.br"><i class="fa-solid fa-envelope"></i> contato@distritosolar.com.br</a>
+        <a href="#"><i class="fa-solid fa-location-dot"></i> Brasília, DF e entorno</a>
       </div>
     </div>
     <div class="footer-bottom">
