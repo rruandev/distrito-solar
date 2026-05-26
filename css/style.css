@@ -7,18 +7,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --azul:       #1B4F8A;
-  --azul-escuro:#0F2F56;
-  --azul-claro: #2E78D2;
-  --amarelo:    #F5C400;
-  --amarelo-h:  #D4A900;
+  --azul:       #1A72C8;
+  --azul-escuro:#0C3D8C;
+  --azul-claro: #2AAAE8;
+  --amarelo:    #F5A000;
+  --amarelo-h:  #D98C00;
   --branco:     #FFFFFF;
   --cinza-bg:   #F5F7FC;
   --cinza-txt:  #5A6479;
   --texto:      #17192E;
   --radius:     12px;
-  --sombra:     0 4px 24px rgba(27,79,138,.10);
-  --sombra-lg:  0 12px 40px rgba(27,79,138,.16);
+  --sombra:     0 4px 24px rgba(26,114,200,.10);
+  --sombra-lg:  0 12px 40px rgba(26,114,200,.18);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -111,10 +111,13 @@ nav {
 }
 .logo {
   display: flex; align-items: center; gap: 10px;
-  font-size: 1.4rem; font-weight: 800;
-  color: var(--branco);
 }
-.logo span { color: var(--amarelo); }
+.logo img {
+  height: 46px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.25));
+}
 .logo-icon {
   width: 36px; height: 36px;
   background: var(--amarelo);
