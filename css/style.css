@@ -205,12 +205,49 @@ nav {
 }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 
+/* ── HERO 3D ORBS ─────────────────────────── */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(72px);
+}
+.hero-orb-1 {
+  width: 340px; height: 340px;
+  background: radial-gradient(circle, rgba(245,160,0,.28), transparent 70%);
+  top: -80px; right: 22%;
+  animation: orb-drift 9s ease-in-out infinite;
+}
+.hero-orb-2 {
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(46,170,232,.3), transparent 70%);
+  bottom: 20px; left: 8%;
+  animation: orb-drift 7s ease-in-out infinite reverse;
+}
+.hero-orb-3 {
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(245,160,0,.2), transparent 70%);
+  bottom: 40px; right: 5%;
+  animation: orb-drift 11s ease-in-out infinite 2s;
+}
+@keyframes orb-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(18px, -20px) scale(1.1); }
+  66%       { transform: translate(-12px, 12px) scale(.94); }
+}
+
 /* Solar panel visual */
 .hero-visual { position: relative; display: flex; flex-direction: column; align-items: center; gap: 24px; }
 .solar-wrap {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
+  animation: solar-float 5s ease-in-out infinite;
+  filter: drop-shadow(0 40px 60px rgba(0,0,0,.5));
+}
+@keyframes solar-float {
+  0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+  50%       { transform: translateY(-14px) rotateZ(.4deg); }
 }
 .panel-grid {
   display: grid;
@@ -698,4 +735,65 @@ footer {
 .fade-up.visivel {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ── 3D TILT (Vanilla Tilt) ───────────────── */
+.card,
+.servico-card,
+.projeto-card,
+.depoimento-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+/* Glare layer */
+.js-tilt-glare {
+  border-radius: inherit !important;
+  overflow: hidden !important;
+}
+/* Conteúdo flutua em Z */
+.card > *,
+.servico-body > *,
+.projeto-info > *,
+.depoimento-card > * {
+  transform: translateZ(18px);
+  position: relative;
+}
+
+/* ── 3D HERO PARALAX BADGE ────────────────── */
+.hero-badge {
+  transform-style: preserve-3d;
+  animation: badge-float 4s ease-in-out infinite;
+}
+@keyframes badge-float {
+  0%, 100% { transform: translateY(0) translateZ(0); }
+  50%       { transform: translateY(-6px) translateZ(10px); }
+}
+
+/* ── 3D STAT CARDS ────────────────────────── */
+.stat-card {
+  transform-style: preserve-3d;
+  transition: transform .3s ease, background .3s;
+}
+.stat-card:hover {
+  transform: translateZ(12px) scale(1.06);
+  background: rgba(255,255,255,.14);
+}
+
+/* ── 3D SOBRE VISUAL ──────────────────────── */
+.sobre-visual {
+  transform-style: preserve-3d;
+  transition: transform .4s ease;
+}
+.sobre-visual:hover {
+  transform: perspective(800px) rotateY(-4deg) rotateX(2deg);
+}
+
+/* ── ICON WRAP 3D ─────────────────────────── */
+.icon-wrap {
+  transition: transform .3s ease, box-shadow .3s;
+}
+.card:hover .icon-wrap,
+.servico-card:hover .icon-wrap {
+  transform: translateZ(28px) scale(1.12) rotate(-4deg);
+  box-shadow: 0 8px 24px rgba(27,79,138,.2);
 }
