@@ -119,3 +119,40 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('.stat-card strong').forEach(el => statsObserver.observe(el));
+
+// ── Contador animado via data-counter ─────────
+function animateCounter2(el, target, prefix, suffix) {
+  let current = 0;
+  const step = Math.ceil(target / 40);
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = prefix + current + suffix;
+    if (current >= target) clearInterval(timer);
+  }, 35);
+}
+
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    animateCounter2(el, +el.dataset.counter, el.dataset.prefix || '', el.dataset.suffix || '');
+    counterObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-counter]').forEach(el => counterObs.observe(el));
+
+// ── LGPD Banner ───────────────────────────────
+const lgpdBanner = document.getElementById('lgpdBanner');
+const lgpdBtn    = document.getElementById('lgpdAceitar');
+if (lgpdBanner) {
+  if (!localStorage.getItem('lgpd_ok')) {
+    setTimeout(() => lgpdBanner.classList.add('visivel'), 900);
+  }
+  if (lgpdBtn) {
+    lgpdBtn.addEventListener('click', () => {
+      localStorage.setItem('lgpd_ok', '1');
+      lgpdBanner.classList.remove('visivel');
+    });
+  }
+}

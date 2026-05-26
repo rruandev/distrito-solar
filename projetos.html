@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projetos Realizados — Distrito Solar</title>
   <meta name="description" content="Veja os projetos de energia solar realizados pela Distrito Solar em Brasília, DF e entorno." />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Distrito Solar" />
+  <meta property="og:title" content="Projetos Realizados — Distrito Solar" />
+  <meta property="og:description" content="Conheça os projetos de energia solar realizados pela Distrito Solar no DF e entorno." />
+  <meta property="og:image" content="https://distrito-solar.vercel.app/images/projeto-industrial.jpg" />
+  <meta property="og:url" content="https://distrito-solar.vercel.app/projetos.html" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
@@ -46,7 +54,7 @@
       <div class="projetos-grid">
         <div class="projeto-card fade-up">
           <div class="projeto-img">
-            <img src="images/projeto-residencial.jpg" alt="Projeto residencial Distrito Solar — DF" />
+            <img src="images/projeto-residencial.jpg" alt="Projeto residencial Distrito Solar — DF" loading="lazy" />
             <span class="foto-badge">Residencial</span>
           </div>
           <div class="projeto-info">
@@ -77,7 +85,7 @@
 
         <div class="projeto-card fade-up">
           <div class="projeto-img">
-            <img src="images/projeto-industrial.jpg" alt="Projeto industrial Distrito Solar — galpão Luziânia" />
+            <img src="images/projeto-industrial.jpg" alt="Projeto industrial Distrito Solar — galpão Luziânia" loading="lazy" />
             <span class="foto-badge">Industrial</span>
           </div>
           <div class="projeto-info">
@@ -94,7 +102,7 @@
 
         <div class="projeto-card fade-up">
           <div class="projeto-img">
-            <img src="images/projeto-rural.jpg" alt="Projeto rural Distrito Solar — galpão agro" />
+            <img src="images/projeto-rural.jpg" alt="Projeto rural Distrito Solar — galpão agro" loading="lazy" />
             <span class="foto-badge">Rural / Agro</span>
           </div>
           <div class="projeto-info">
@@ -111,7 +119,7 @@
 
         <div class="projeto-card fade-up">
           <div class="projeto-img">
-            <img src="images/projeto-rural2.jpg" alt="Projeto residencial Distrito Solar — condomínio Sobradinho" />
+            <img src="images/projeto-rural2.jpg" alt="Projeto residencial Distrito Solar — condomínio Sobradinho" loading="lazy" />
             <span class="foto-badge">Residencial</span>
           </div>
           <div class="projeto-info">
@@ -152,7 +160,7 @@
       <div class="cards-grid">
         <div class="card fade-up" style="text-align:center;">
           <div class="icon-wrap icon-yellow" style="margin:0 auto 16px;"><i class="fa-solid fa-medal"></i></div>
-          <h3 style="font-size:1.9rem; color:var(--amarelo-h);">+5 anos</h3>
+          <h3 data-counter="5" data-prefix="+" data-suffix=" anos" style="font-size:1.9rem; color:var(--amarelo-h);">+5 anos</h3>
           <p>De experiência no mercado fotovoltaico no DF</p>
         </div>
         <div class="card fade-up" style="text-align:center;">
@@ -162,12 +170,12 @@
         </div>
         <div class="card fade-up" style="text-align:center;">
           <div class="icon-wrap icon-yellow" style="margin:0 auto 16px;"><i class="fa-solid fa-chart-line"></i></div>
-          <h3 style="font-size:1.9rem; color:var(--amarelo-h);">95%</h3>
+          <h3 data-counter="95" data-suffix="%" style="font-size:1.9rem; color:var(--amarelo-h);">95%</h3>
           <p>Redução média na conta de energia dos nossos clientes</p>
         </div>
         <div class="card fade-up" style="text-align:center;">
           <div class="icon-wrap icon-azul" style="margin:0 auto 16px;"><i class="fa-solid fa-face-smile"></i></div>
-          <h3 style="font-size:1.9rem; color:var(--amarelo-h);">100%</h3>
+          <h3 data-counter="100" data-suffix="%" style="font-size:1.9rem; color:var(--amarelo-h);">100%</h3>
           <p>Clientes satisfeitos com o retorno do investimento</p>
         </div>
       </div>
@@ -220,8 +228,16 @@
       <p>© 2026 Distrito Solar. Todos os direitos reservados.</p>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <a href="https://wa.me/5561999999999" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
+  <div class="lgpd-banner" id="lgpdBanner">
+    <p><i class="fa-solid fa-shield-halved" style="color:var(--amarelo);margin-right:8px;"></i>Usamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="#">Política de Privacidade</a>.</p>
+    <button class="lgpd-aceitar" id="lgpdAceitar">Aceitar</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
