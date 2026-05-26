@@ -411,12 +411,39 @@ nav {
 }
 .projeto-card:hover { transform: translateY(-5px); box-shadow: var(--sombra-lg); }
 .projeto-img {
-  height: 180px;
+  height: 210px;
   display: flex; align-items: center; justify-content: center;
   font-size: 3rem;
   position: relative;
   overflow: hidden;
 }
+/* Foto real */
+.projeto-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .5s ease;
+}
+.projeto-card:hover .projeto-img img { transform: scale(1.07); }
+
+/* Badge de tipo sobre a foto */
+.projeto-img .foto-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  background: rgba(12,61,140,.82);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 50px;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+/* Ícone (quando não há foto) */
 .projeto-img i {
   font-size: 3.2rem;
   opacity: .75;
