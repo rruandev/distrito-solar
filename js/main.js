@@ -1,13 +1,23 @@
 // ── Scroll progress bar ───────────────────────
 const progressBar = document.getElementById('scroll-progress');
-if (progressBar) {
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressBar.style.width = pct + '%';
-  }, { passive: true });
-}
+const stickyCta   = document.getElementById('stickyCta');
+const heroSection = document.querySelector('.hero');
+
+window.addEventListener('scroll', () => {
+  const scrollTop  = window.scrollY;
+  const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+
+  // progress bar
+  if (progressBar) {
+    progressBar.style.width = docHeight > 0 ? (scrollTop / docHeight) * 100 + '%' : '0%';
+  }
+
+  // sticky CTA — aparece depois do hero
+  if (stickyCta && heroSection) {
+    const heroBottom = heroSection.getBoundingClientRect().bottom + scrollTop;
+    stickyCta.classList.toggle('visivel', scrollTop > heroBottom);
+  }
+}, { passive: true });
 
 // ── Menu mobile ──────────────────────────────
 const toggle = document.getElementById('menuToggle');
@@ -180,6 +190,46 @@ if (slider) {
 
   slider.addEventListener('input', updateCalc);
   updateCalc();
+}
+
+// ── Formulário 2 etapas ───────────────────────
+const btnProximo = document.getElementById('btnProximo');
+const btnVoltar  = document.getElementById('btnVoltar');
+if (btnProximo) {
+  btnProximo.addEventListener('click', () => {
+    const pag1 = document.getElementById('formPag1');
+    const pag2 = document.getElementById('formPag2');
+    const s1 = document.getElementById('stepItem1');
+    const s2 = document.getElementById('stepItem2');
+    const linha = document.getElementById('stepLinha');
+    // validação básica da etapa 1
+    const nome = document.getElementById('nome');
+    const tel  = document.getElementById('telefone');
+    const mail = document.getElementById('email');
+    if (!nome.value.trim() || !tel.value.trim() || !mail.value.trim()) {
+      [nome, tel, mail].forEach(f => {
+        if (!f.value.trim()) f.style.borderColor = '#e53e3e';
+        else f.style.borderColor = '';
+      });
+      return;
+    }
+    pag1.classList.remove('ativa');
+    pag2.classList.add('ativa');
+    s1.classList.remove('ativo'); s1.classList.add('feito');
+    s2.classList.add('ativo');
+    if (linha) linha.classList.add('ativa');
+  });
+}
+if (btnVoltar) {
+  btnVoltar.addEventListener('click', () => {
+    document.getElementById('formPag1').classList.add('ativa');
+    document.getElementById('formPag2').classList.remove('ativa');
+    document.getElementById('stepItem1').classList.remove('feito');
+    document.getElementById('stepItem1').classList.add('ativo');
+    document.getElementById('stepItem2').classList.remove('ativo');
+    const linha = document.getElementById('stepLinha');
+    if (linha) linha.classList.remove('ativa');
+  });
 }
 
 // ── FAQ Accordion ─────────────────────────────

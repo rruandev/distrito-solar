@@ -21,6 +21,12 @@
   <!-- SCROLL PROGRESS -->
   <div id="scroll-progress"></div>
 
+  <!-- STICKY MINI CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <p>Ainda pagando conta de luz cara? <strong>Solicite seu orçamento solar gratuito.</strong></p>
+    <a href="contato.html"><i class="fa-solid fa-bolt"></i> Orçamento grátis</a>
+  </div>
+
   <!-- URGÊNCIA STRIP -->
   <div class="urgencia-strip">
     <i class="fa-solid fa-bolt"></i>
@@ -71,6 +77,11 @@
             <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
+        <div class="google-rating">
+          <i class="fa-brands fa-google"></i>
+          <span class="g-stars">★★★★★</span>
+          <span>4.9 no Google · 83 avaliações</span>
+        </div>
       </div>
 
       <div class="hero-visual">
@@ -84,13 +95,41 @@
         </div>
         <div class="hero-stats">
           <div class="stat-card"><strong>+5</strong><span>Anos de mercado</span></div>
-          <div class="stat-card"><strong>4</strong><span>Segmentos atendidos</span></div>
+          <div class="stat-card"><strong data-counter="247" data-suffix="">0</strong><span>Projetos instalados</span></div>
           <div class="stat-card"><strong>95%</strong><span>Redução na conta</span></div>
-          <div class="stat-card"><strong>DF</strong><span>e região do entorno</span></div>
+          <div class="stat-card"><strong data-counter="100" data-suffix="%" data-prefix="">0%</strong><span>Clientes satisfeitos</span></div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ANTES / DEPOIS -->
+  <div class="antes-depois-section">
+    <div class="container">
+      <div class="linha-amarela"></div>
+      <h2 class="section-title">O que muda na sua vida</h2>
+      <p class="section-sub">Veja a diferença real na conta de luz de quem instalou energia solar com a gente</p>
+      <div class="antes-depois-wrap">
+        <div class="ad-lado antes">
+          <span class="ad-tag">Antes do solar</span>
+          <div class="ad-valor">R$ 780</div>
+          <p class="ad-label">por mês na conta de luz</p>
+          <p class="ad-detalhe">Conta chegava todo mês, subia todo ano. Neoenergia aumentando e o bolso apertando. Sem previsão de melhora.</p>
+        </div>
+        <div class="ad-seta"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="ad-lado depois">
+          <span class="ad-tag">Depois do solar</span>
+          <div class="ad-valor">R$ 47</div>
+          <p class="ad-label">apenas a taxa mínima mensal</p>
+          <p class="ad-detalhe">Só a taxa mínima da distribuidora. O sistema gera mais do que consome e ainda acumula créditos de energia.</p>
+        </div>
+      </div>
+      <div class="ad-economia-tag fade-up">
+        <i class="fa-solid fa-piggy-bank"></i>
+        Economia de <strong style="color:var(--amarelo);margin:0 4px;">R$ 8.796 por ano</strong> — retorno do investimento em menos de 4 anos
+      </div>
+    </div>
+  </div>
 
   <!-- POR QUE ESCOLHER -->
   <section class="section">
@@ -234,6 +273,66 @@
     </div>
   </section>
 
+  <!-- POR QUE AGORA -->
+  <section class="urgencia-section">
+    <div class="urgencia-inner">
+      <div class="urgencia-texto">
+        <div class="linha-amarela"></div>
+        <h2>A tarifa subiu <em>18,3%</em> em 2024.<br>E vai subir de novo.</h2>
+        <p>A Neoenergia reajusta a tarifa todo ano. Enquanto você adia, a conta cresce — e o dinheiro que poderia estar no seu bolso vai direto para a distribuidora.</p>
+        <div class="urgencia-stats">
+          <div class="urgencia-stat">
+            <div class="urgencia-stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div>
+              <strong>+18,3% em 2024</strong>
+              <span>Aumento da tarifa Neoenergia Brasília</span>
+            </div>
+          </div>
+          <div class="urgencia-stat">
+            <div class="urgencia-stat-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+            <div>
+              <strong>Cada mês sem solar = dinheiro perdido</strong>
+              <span>Você paga, a distribuidora lucra. Não você.</span>
+            </div>
+          </div>
+          <div class="urgencia-stat">
+            <div class="urgencia-stat-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <div>
+              <strong>Retorno médio em 3,8 anos</strong>
+              <span>Depois disso, geração essencialmente gratuita por 20+ anos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="urgencia-card">
+        <h3><i class="fa-solid fa-calculator" style="margin-right:8px;"></i> Quanto você já perdeu sem solar?</h3>
+        <div class="perda-lista">
+          <div class="perda-item">
+            <span>Conta de R$ 400 — último mês</span>
+            <strong>− R$ 400</strong>
+          </div>
+          <div class="perda-item">
+            <span>Conta de R$ 400 — últimos 6 meses</span>
+            <strong>− R$ 2.400</strong>
+          </div>
+          <div class="perda-item">
+            <span>Conta de R$ 400 — último 1 ano</span>
+            <strong>− R$ 4.800</strong>
+          </div>
+        </div>
+        <div class="perda-total">
+          <span>Com solar você teria pago apenas:</span>
+          <strong>R$ 564</strong>
+        </div>
+        <a href="contato.html" class="btn btn-primary btn-full">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          Quero parar de perder dinheiro
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- DEPOIMENTOS -->
   <section class="section">
     <div class="container">
@@ -325,6 +424,12 @@
           Distrito<span>Solar</span>
         </div>
         <p class="footer-desc">Energia solar de qualidade para Brasília, DF e entorno. Mais de 5 anos gerando economia e sustentabilidade para nossos clientes.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://wa.me/5561999999999" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="Google"><i class="fa-brands fa-google"></i></a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Navegação</h4>
@@ -348,6 +453,7 @@
   </footer>
   <a href="https://wa.me/5561999999999" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
+    <span class="wa-tooltip">Resposta em minutos!</span>
   </a>
 
   <div class="lgpd-banner" id="lgpdBanner">
