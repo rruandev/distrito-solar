@@ -142,6 +142,38 @@ const counterObs = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-counter]').forEach(el => counterObs.observe(el));
 
+// ── Filtro de projetos ────────────────────────
+const filtrosBtns = document.querySelectorAll('.filtro-btn');
+const projetoCards = document.querySelectorAll('#projetosGrid .projeto-card');
+const projetosVazio = document.getElementById('projetosVazio');
+
+if (filtrosBtns.length) {
+  filtrosBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filtrosBtns.forEach(b => b.classList.remove('ativo'));
+      btn.classList.add('ativo');
+
+      const filtro = btn.dataset.filtro;
+      let visiveis = 0;
+
+      projetoCards.forEach((card, i) => {
+        const cat = card.dataset.categoria;
+        const mostrar = filtro === 'todos' || cat === filtro;
+        if (mostrar) {
+          card.classList.remove('oculto');
+          card.style.transitionDelay = `${i * 0.05}s`;
+          visiveis++;
+        } else {
+          card.classList.add('oculto');
+          card.style.transitionDelay = '0s';
+        }
+      });
+
+      if (projetosVazio) projetosVazio.style.display = visiveis === 0 ? 'block' : 'none';
+    });
+  });
+}
+
 // ── LGPD Banner ───────────────────────────────
 const lgpdBanner = document.getElementById('lgpdBanner');
 const lgpdBtn    = document.getElementById('lgpdAceitar');

@@ -51,8 +51,17 @@
       <h2 class="section-title">Nossa carteira de projetos</h2>
       <p class="section-sub">Cada projeto é único. Veja como geramos economia real para nossos clientes</p>
 
-      <div class="projetos-grid">
-        <div class="projeto-card fade-up">
+      <!-- FILTROS -->
+      <div class="filtros-wrap">
+        <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+        <button class="filtro-btn" data-filtro="residencial">Residencial</button>
+        <button class="filtro-btn" data-filtro="comercial">Comercial</button>
+        <button class="filtro-btn" data-filtro="industrial">Industrial</button>
+        <button class="filtro-btn" data-filtro="rural">Rural / Agro</button>
+      </div>
+
+      <div class="projetos-grid" id="projetosGrid">
+        <div class="projeto-card fade-up" data-categoria="residencial">
           <div class="projeto-img">
             <img src="images/projeto-residencial.jpg" alt="Projeto residencial Distrito Solar — DF" loading="lazy" />
             <span class="foto-badge">Residencial</span>
@@ -69,12 +78,18 @@
           </div>
         </div>
 
-        <div class="projeto-card fade-up">
-          <div class="projeto-img comercial"><i class="fa-solid fa-briefcase-medical"></i></div>
+        <div class="projeto-card fade-up" data-categoria="comercial">
+          <div class="projeto-img comercial-clinic">
+            <div class="projeto-img-icon-wrap">
+              <i class="fa-solid fa-briefcase-medical"></i>
+              <span class="projeto-img-label">Clínica Médica</span>
+            </div>
+            <span class="foto-badge">Comercial</span>
+          </div>
           <div class="projeto-info">
             <p class="projeto-tipo">Comercial</p>
             <h3>Clínica Médica — Taguatinga</h3>
-            <p>Instalação em clínica com alto consumo em ar-condicionado e equipamentos.</p>
+            <p>Instalação em clínica com alto consumo em ar-condicionado e equipamentos médicos.</p>
             <div class="projeto-kpis">
               <div class="kpi"><strong>18 kWp</strong><span>Potência</span></div>
               <div class="kpi"><strong>R$ 1.800/mês</strong><span>Economia</span></div>
@@ -83,7 +98,7 @@
           </div>
         </div>
 
-        <div class="projeto-card fade-up">
+        <div class="projeto-card fade-up" data-categoria="industrial">
           <div class="projeto-img">
             <img src="images/projeto-industrial.jpg" alt="Projeto industrial Distrito Solar — galpão Luziânia" loading="lazy" />
             <span class="foto-badge">Industrial</span>
@@ -100,7 +115,7 @@
           </div>
         </div>
 
-        <div class="projeto-card fade-up">
+        <div class="projeto-card fade-up" data-categoria="rural">
           <div class="projeto-img">
             <img src="images/projeto-rural.jpg" alt="Projeto rural Distrito Solar — galpão agro" loading="lazy" />
             <span class="foto-badge">Rural / Agro</span>
@@ -117,9 +132,9 @@
           </div>
         </div>
 
-        <div class="projeto-card fade-up">
+        <div class="projeto-card fade-up" data-categoria="residencial">
           <div class="projeto-img">
-            <img src="images/projeto-rural2.jpg" alt="Projeto residencial Distrito Solar — condomínio Sobradinho" loading="lazy" />
+            <img src="images/projeto-condominio.jpg" alt="Projeto residencial Distrito Solar — condomínio Sobradinho" loading="lazy" onerror="this.parentElement.classList.add('cond-fallback'); this.remove();" />
             <span class="foto-badge">Residencial</span>
           </div>
           <div class="projeto-info">
@@ -134,8 +149,14 @@
           </div>
         </div>
 
-        <div class="projeto-card fade-up">
-          <div class="projeto-img comercial"><i class="fa-solid fa-cart-shopping"></i></div>
+        <div class="projeto-card fade-up" data-categoria="comercial">
+          <div class="projeto-img comercial-market">
+            <div class="projeto-img-icon-wrap">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="projeto-img-label">Supermercado</span>
+            </div>
+            <span class="foto-badge">Comercial</span>
+          </div>
           <div class="projeto-info">
             <p class="projeto-tipo">Comercial</p>
             <h3>Supermercado — Ceilândia</h3>
@@ -148,6 +169,8 @@
           </div>
         </div>
       </div>
+
+      <p class="projetos-vazio" id="projetosVazio" style="display:none;">Nenhum projeto encontrado nesta categoria.</p>
     </div>
   </section>
 
