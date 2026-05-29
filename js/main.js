@@ -33,13 +33,78 @@ document.querySelectorAll('.nav-links a').forEach(a => {
   if (a.getAttribute('href') === currentPage) a.classList.add('ativo');
 });
 
-// ── Formulário de orçamento ──────────────────
+// ── Formulário de orçamento → envia via WhatsApp ─
 const form = document.getElementById('formOrcamento');
 if (form) {
+  // Navegação entre etapas
+  const btnProximo = document.getElementById('btnProximo');
+  const btnVoltar  = document.getElementById('btnVoltar');
+  const pag1       = document.getElementById('formPag1');
+  const pag2       = document.getElementById('formPag2');
+  const step1      = document.getElementById('stepItem1');
+  const step2      = document.getElementById('stepItem2');
+  const stepLinha  = document.getElementById('stepLinha');
+
+  if (btnProximo) {
+    btnProximo.addEventListener('click', () => {
+      const nome     = document.getElementById('nome');
+      const telefone = document.getElementById('telefone');
+      const email    = document.getElementById('email');
+      if (!nome.value.trim() || !telefone.value.trim() || !email.value.trim()) {
+        nome.reportValidity(); telefone.reportValidity(); email.reportValidity();
+        return;
+      }
+      pag1.classList.remove('ativa');
+      pag2.classList.add('ativa');
+      step1.classList.remove('ativo'); step1.classList.add('concluido');
+      step2.classList.add('ativo');
+      if (stepLinha) stepLinha.classList.add('ativo');
+    });
+  }
+
+  if (btnVoltar) {
+    btnVoltar.addEventListener('click', () => {
+      pag2.classList.remove('ativa');
+      pag1.classList.add('ativa');
+      step2.classList.remove('ativo');
+      step1.classList.add('ativo'); step1.classList.remove('concluido');
+      if (stepLinha) stepLinha.classList.remove('ativo');
+    });
+  }
+
+  // Submit → monta mensagem e abre WhatsApp
   form.addEventListener('submit', e => {
     e.preventDefault();
+    const nome      = document.getElementById('nome')?.value.trim() || '';
+    const telefone  = document.getElementById('telefone')?.value.trim() || '';
+    const email     = document.getElementById('email')?.value.trim() || '';
+    const segmento  = document.getElementById('segmento')?.value || '';
+    const cidade    = document.getElementById('cidade')?.value.trim() || '';
+    const conta     = document.getElementById('conta')?.value.trim() || '';
+    const mensagem  = document.getElementById('mensagem')?.value.trim() || '';
+
+    const segMap = {
+      residencial: 'Residencial (casa/apartamento)',
+      comercial:   'Comercial (loja/escritório)',
+      industrial:  'Industrial (galpão/fábrica)',
+      rural:       'Rural / Agro (fazenda/sítio)'
+    };
+
+    let msg = `Olá! Vim pelo site e gostaria de solicitar um orçamento de energia solar.%0A%0A`;
+    msg += `*Nome:* ${encodeURIComponent(nome)}%0A`;
+    msg += `*WhatsApp:* ${encodeURIComponent(telefone)}%0A`;
+    msg += `*E-mail:* ${encodeURIComponent(email)}%0A`;
+    if (segmento) msg += `*Tipo:* ${encodeURIComponent(segMap[segmento] || segmento)}%0A`;
+    if (cidade)   msg += `*Cidade:* ${encodeURIComponent(cidade)}%0A`;
+    if (conta)    msg += `*Conta de luz:* R$${encodeURIComponent(conta)}%0A`;
+    if (mensagem) msg += `*Mensagem:* ${encodeURIComponent(mensagem)}%0A`;
+
+    window.open(`https://wa.me/5561991361380?text=${msg}`, '_blank');
+
+    // Mostra mensagem de sucesso
     form.style.display = 'none';
-    document.getElementById('formSucesso').style.display = 'block';
+    const sucesso = document.getElementById('formSucesso');
+    if (sucesso) sucesso.style.display = 'block';
   });
 }
 
