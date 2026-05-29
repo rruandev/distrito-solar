@@ -288,3 +288,11 @@ if (lgpdBanner) {
     });
   }
 }
+
+// ── FAQ accordion
+function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el) { el.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}

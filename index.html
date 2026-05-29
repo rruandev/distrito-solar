@@ -13,6 +13,51 @@
   <meta property="og:image" content="https://distrito-solar.vercel.app/images/logo.png" />
   <meta property="og:url" content="https://distrito-solar.vercel.app/" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Distrito Solar",
+    "description": "Instalação de energia solar em Brasília e região. Atendemos residencial, comercial, industrial e rural.",
+    "url": "https://distrito-solar.vercel.app/",
+    "telephone": "+5561999999999",
+    "email": "contato@distritosolar.com.br",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brasília",
+      "addressRegion": "DF",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-15.7801",
+      "longitude": "-47.9292"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "13:00"
+      }
+    ],
+    "areaServed": ["Brasília","Sobradinho","Taguatinga","Planaltina","Gama","Ceilândia","Entorno DF"],
+    "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "83"
+    }
+  }
+  </script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <!-- PROTEÇÃO DE CONTEÚDO -->
@@ -422,6 +467,94 @@
       </div>
     </div>
   </div>
+
+  <!-- FAQ -->
+  <section class="section section-alt" id="faq">
+    <div class="container">
+      <div class="linha-amarela"></div>
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <p class="section-sub">Tire suas dúvidas antes de solicitar o orçamento</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>Quanto tempo demora para instalar o sistema solar?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <p>Em média, a instalação leva de 1 a 3 dias úteis dependendo do porte do sistema. Antes disso, fazemos o projeto e a aprovação junto à distribuidora (Neoenergia), que pode levar de 15 a 45 dias. No total, você começa a economizar em cerca de 30 a 60 dias após contratar.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>O sistema funciona em dias nublados ou chuvosos?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <p>Sim! Os painéis geram energia com luz difusa, mesmo em dias encobertos — apenas com eficiência um pouco menor. Em Brasília, com mais de 300 dias de sol por ano, a geração é excelente ao longo de todo o ano.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>O que acontece quando falta luz (queda de energia)?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <p>Nos sistemas conectados à rede (on-grid), o sistema desliga automaticamente por segurança quando há queda de energia — isso protege os trabalhadores da rede elétrica. Se quiser geração durante quedas, é necessário adicionar um banco de baterias (sistema híbrido), que também instalamos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>Em quanto tempo tenho o retorno do investimento?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <p>Em média entre 3 a 5 anos, dependendo do valor da sua conta de luz e do sistema instalado. Após esse período, a energia gerada é essencialmente gratuita pelos próximos 20 a 25 anos — vida útil média dos equipamentos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>Precisa de manutenção? Qual o custo?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <p>A manutenção é simples e de baixo custo. Recomendamos limpeza dos painéis a cada 6 meses (poeira e folhas reduzem a eficiência) e uma vistoria técnica anual. Os inversores têm garantia de fábrica e os painéis costumam durar 25+ anos sem grandes intervenções.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>Posso financiar o sistema solar?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <p>Sim! Trabalhamos com financiamento via bancos parceiros com condições especiais para energia solar. Em muitos casos, a parcela do financiamento é menor do que o valor que você economiza na conta de luz — ou seja, você já sai no lucro desde o primeiro mês.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" onclick="toggleFaq(this)">
+            <span>E se eu me mudar? Posso levar o sistema?</span>
+            <i class="fa-solid fa-plus faq-icon"></i>
+          </button>
+          <div class="faq-body">
+            <p>Sim, o sistema pode ser desmontado e reinstalado no novo imóvel. Outra opção é incluir o sistema no valor de venda do imóvel — casas com energia solar valorizam em média 6 a 8% acima do mercado.</p>
+          </div>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="contato.html" class="btn btn-primary">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          Ainda tem dúvidas? Fale com a gente
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA BANNER -->
   <section class="cta-banner">
