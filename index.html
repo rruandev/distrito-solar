@@ -521,6 +521,58 @@
       });
     })();
   </script>
+
+  <!-- DEVTOOLS PROTECTION -->
+  <script>
+    (function() {
+      // Trick 1: debugger loop — congela o DevTools quando aberto
+      var _dt = function() {};
+      _dt.toString = function() {
+        // detectado via console
+        document.body.style.display = 'none';
+        setTimeout(function() { document.body.style.display = ''; }, 100);
+      };
+
+      // Trick 2: tamanho da janela — detecta painel lateral/inferior
+      var _devOpen = false;
+      function _checkDevTools() {
+        var w = window.outerWidth - window.innerWidth > 200;
+        var h = window.outerHeight - window.innerHeight > 200;
+        if ((w || h) && !_devOpen) {
+          _devOpen = true;
+          _onDevOpen();
+        }
+        if (!w && !h) _devOpen = false;
+      }
+
+      // Trick 3: performance do debugger — quando console está aberto, o getter dispara
+      var _devCheck = /./;
+      _devCheck.toString = function() { _onDevOpen(); return ''; };
+
+      function _onDevOpen() {
+        // Redireciona para a página normalmente mas com aviso sobreposto
+        var overlay = document.getElementById('_devOverlay');
+        if (overlay) { overlay.style.display = 'flex'; }
+      }
+
+      // Verifica a cada 800ms
+      setInterval(_checkDevTools, 800);
+
+      // Escuta mudança de tamanho de janela (redimensionar abre DevTools)
+      window.addEventListener('resize', _checkDevTools);
+
+      // Console log detection
+      setInterval(function() {
+        try { console.log(_devCheck); console.clear(); } catch(e) {}
+      }, 1000);
+    })();
+  </script>
+  <div id="_devOverlay" style="display:none;position:fixed;inset:0;z-index:999999;background:rgba(0,0,0,.97);align-items:center;justify-content:center;flex-direction:column;gap:16px;">
+    <p style="color:rgba(255,255,255,.8);font-family:sans-serif;font-size:18px;font-weight:300;letter-spacing:.05em;">© Conteúdo protegido</p>
+    <p style="color:rgba(255,255,255,.35);font-family:sans-serif;font-size:13px;">Feche o DevTools para continuar navegando.</p>
+    <button onclick="document.getElementById('_devOverlay').style.display='none'" style="margin-top:8px;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.5);padding:10px 24px;font-family:sans-serif;font-size:13px;cursor:pointer;border-radius:2px;">Fechar</button>
+  </div>
 </body>
 </html>
+
 
