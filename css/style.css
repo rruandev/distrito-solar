@@ -1989,3 +1989,11 @@ footer {
   color: #5a6a7a; line-height: 1.8;
   padding-bottom: 20px;
 }
+
+/* ── Sticky CTA botoes responsivos ── */
+.btn-wa-mobile { display: none; }
+.btn-desk      { display: inline-flex; }
+@media (max-width: 768px) {
+  .btn-wa-mobile { display: inline-flex; align-items: center; gap: 8px; }
+  .btn-desk      { display: none; }
+}
