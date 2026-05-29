@@ -18,6 +18,8 @@
 </head>
 <body>
 
+  <div id="scroll-progress"></div>
+
   <header>
     <nav>
       <a href="index.html" class="logo">
@@ -127,28 +129,116 @@
   <section class="section">
     <div class="container">
       <div class="linha-amarela"></div>
-      <h2 class="section-title">Como funciona</h2>
-      <p class="section-sub">Do orçamento à geração de energia em 4 etapas simples</p>
-      <div class="cards-grid">
-        <div class="card fade-up">
-          <div class="icon-wrap icon-yellow"><i class="fa-solid fa-clipboard-list"></i></div>
-          <h3>1. Orçamento gratuito</h3>
-          <p>Entre em contato e enviamos uma proposta personalizada com base no seu consumo de energia atual, sem nenhum custo.</p>
+      <h2 class="section-title">Como funciona na prática</h2>
+      <p class="section-sub">Da conversa inicial à energia gerada: um processo simples e transparente</p>
+
+      <div class="processo-timeline">
+        <div class="processo-step fade-up">
+          <div class="processo-num">
+            <i class="fa-solid fa-clipboard-list"></i>
+            <span class="processo-step-n">1</span>
+          </div>
+          <h3>Orçamento gratuito</h3>
+          <p>Analisamos sua conta de energia e apresentamos uma proposta personalizada. Sem taxa de visita.</p>
+          <span class="processo-prazo"><i class="fa-regular fa-clock"></i> Em até 24h</span>
         </div>
-        <div class="card fade-up">
-          <div class="icon-wrap icon-azul"><i class="fa-solid fa-ruler-combined"></i></div>
-          <h3>2. Projeto técnico</h3>
-          <p>Nossa equipe elabora o projeto elétrico e estrutural completo, incluindo todos os documentos para homologação.</p>
+        <div class="processo-step fade-up">
+          <div class="processo-num">
+            <i class="fa-solid fa-ruler-combined"></i>
+            <span class="processo-step-n">2</span>
+          </div>
+          <h3>Projeto técnico</h3>
+          <p>Elaboramos o projeto elétrico e estrutural completo com toda a documentação para homologação na distribuidora.</p>
+          <span class="processo-prazo"><i class="fa-regular fa-clock"></i> 3–5 dias úteis</span>
         </div>
-        <div class="card fade-up">
-          <div class="icon-wrap icon-yellow"><i class="fa-solid fa-hammer"></i></div>
-          <h3>3. Instalação</h3>
-          <p>Instalação profissional realizada por técnicos certificados, com todo cuidado para não danificar sua estrutura.</p>
+        <div class="processo-step fade-up">
+          <div class="processo-num">
+            <i class="fa-solid fa-hammer"></i>
+            <span class="processo-step-n">3</span>
+          </div>
+          <h3>Instalação</h3>
+          <p>Técnicos certificados instalam o sistema com cuidado total com a estrutura. Limpeza garantida ao final.</p>
+          <span class="processo-prazo"><i class="fa-regular fa-clock"></i> 1–2 dias</span>
         </div>
-        <div class="card fade-up">
-          <div class="icon-wrap icon-azul"><i class="fa-solid fa-bolt"></i></div>
-          <h3>4. Ativação e monitoramento</h3>
-          <p>Após a aprovação da distribuidora, seu sistema entra em operação. Você acompanha a geração em tempo real pelo app.</p>
+        <div class="processo-step fade-up">
+          <div class="processo-num">
+            <i class="fa-solid fa-bolt"></i>
+            <span class="processo-step-n">4</span>
+          </div>
+          <h3>Ativação e monitoramento</h3>
+          <p>Após aprovação da Neoenergia, seu sistema entra em operação. Acompanhe a geração em tempo real pelo app.</p>
+          <span class="processo-prazo"><i class="fa-regular fa-clock"></i> 30–60 dias (aprovação)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="linha-amarela"></div>
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <p class="section-sub">Tire suas dúvidas antes de solicitar o orçamento</p>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-pergunta">
+            <strong>Quanto tempo leva para ter retorno do investimento?</strong>
+            <span class="faq-icone"><i class="fa-solid fa-plus"></i></span>
+          </div>
+          <div class="faq-resposta">
+            <p>Em média, os sistemas residenciais têm retorno entre 3 e 5 anos. Sistemas comerciais e industriais costumam ter retorno mais rápido devido ao alto consumo. Após o retorno, a geração de energia é essencialmente gratuita pelos próximos 20+ anos.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-pergunta">
+            <strong>O sistema funciona em dias nublados ou chuvosos?</strong>
+            <span class="faq-icone"><i class="fa-solid fa-plus"></i></span>
+          </div>
+          <div class="faq-resposta">
+            <p>Sim. Os painéis fotovoltaicos geram energia com luz difusa, não apenas luz solar direta. Em dias nublados a geração é reduzida, mas o sistema continua funcionando. E Brasília tem uma das maiores irradiações solares do Brasil — o que torna a região ainda mais favorável.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-pergunta">
+            <strong>Preciso de bateria para armazenar energia?</strong>
+            <span class="faq-icone"><i class="fa-solid fa-plus"></i></span>
+          </div>
+          <div class="faq-resposta">
+            <p>Na maioria dos casos, não. O sistema On-Grid (conectado à rede elétrica) injeta o excedente na rede e gera créditos, que você usa à noite ou em dias com menor geração. Baterias são indicadas para sistemas Off-Grid em locais sem rede elétrica ou para quem deseja independência total.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-pergunta">
+            <strong>Qual a garantia dos equipamentos instalados?</strong>
+            <span class="faq-icone"><i class="fa-solid fa-plus"></i></span>
+          </div>
+          <div class="faq-resposta">
+            <p>Os painéis solares têm garantia de desempenho de 25 anos e garantia de produto de 10 a 12 anos. Os inversores têm garantia de 5 a 10 anos dependendo do fabricante. Trabalhamos apenas com marcas líderes como Canadian Solar, Fronius, WEG e Intelbras.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-pergunta">
+            <strong>É necessário fazer obra ou perfurar o telhado?</strong>
+            <span class="faq-icone"><i class="fa-solid fa-plus"></i></span>
+          </div>
+          <div class="faq-resposta">
+            <p>A instalação é feita com estruturas específicas para cada tipo de telhado (cerâmica, metálico, fibrocimento, laje). Em geral, não há necessidade de obra. Usamos fixações adequadas que não comprometem a impermeabilização e não danificam a estrutura.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-pergunta">
+            <strong>Posso financiar o sistema solar?</strong>
+            <span class="faq-icone"><i class="fa-solid fa-plus"></i></span>
+          </div>
+          <div class="faq-resposta">
+            <p>Sim. Existem linhas de crédito específicas para energia solar, como o Financiamento Solar do Banco do Brasil e linhas BNDES. Em muitos casos, a parcela do financiamento fica abaixo do valor que você economizaria na conta de luz — ou seja, você começa a economizar desde o primeiro mês.</p>
+          </div>
         </div>
       </div>
     </div>

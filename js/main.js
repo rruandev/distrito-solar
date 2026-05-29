@@ -1,3 +1,14 @@
+// ── Scroll progress bar ───────────────────────
+const progressBar = document.getElementById('scroll-progress');
+if (progressBar) {
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + '%';
+  }, { passive: true });
+}
+
 // ── Menu mobile ──────────────────────────────
 const toggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
@@ -141,6 +152,45 @@ const counterObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 document.querySelectorAll('[data-counter]').forEach(el => counterObs.observe(el));
+
+// ── Calculadora de Economia ───────────────────
+const slider = document.getElementById('calcSlider');
+if (slider) {
+  const fmt = v => 'R$ ' + v.toLocaleString('pt-BR');
+
+  function updateCalc() {
+    const conta = +slider.value;
+    const economia = Math.round(conta * 0.95);
+    const anual = economia * 12;
+    const custoEstimado = conta * 18;
+    const retornoAnos = Math.round(custoEstimado / anual * 10) / 10;
+    const co2 = (economia * 12 * 0.09 / 1000).toFixed(1);
+
+    document.getElementById('calcContaLabel').textContent = fmt(conta);
+    document.getElementById('calcEconomia').textContent = fmt(economia);
+    document.getElementById('calcAnual').textContent = fmt(anual);
+    document.getElementById('calcRetorno').textContent = '~' + retornoAnos + ' anos';
+    document.getElementById('calcCo2').textContent =
+      'Você evitaria ~' + co2 + ' toneladas de CO₂ por ano';
+
+    const pct = ((conta - 100) / (5000 - 100)) * 100;
+    slider.style.background =
+      `linear-gradient(90deg, var(--azul) ${pct}%, #dde3f0 ${pct}%)`;
+  }
+
+  slider.addEventListener('input', updateCalc);
+  updateCalc();
+}
+
+// ── FAQ Accordion ─────────────────────────────
+document.querySelectorAll('.faq-pergunta').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const jaAberto = item.classList.contains('aberto');
+    document.querySelectorAll('.faq-item.aberto').forEach(i => i.classList.remove('aberto'));
+    if (!jaAberto) item.classList.add('aberto');
+  });
+});
 
 // ── Filtro de projetos ────────────────────────
 const filtrosBtns = document.querySelectorAll('.filtro-btn');

@@ -18,6 +18,16 @@
 </head>
 <body>
 
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress"></div>
+
+  <!-- URGÊNCIA STRIP -->
+  <div class="urgencia-strip">
+    <i class="fa-solid fa-bolt"></i>
+    Tarifa de energia sobe todo ano — quanto antes você instalar, mais você economiza.
+    <a href="contato.html">Solicite agora →</a>
+  </div>
+
   <!-- HEADER -->
   <header>
     <nav>
@@ -123,6 +133,58 @@
     </div>
   </section>
 
+  <!-- CALCULADORA DE ECONOMIA -->
+  <section class="calc-section">
+    <div class="calc-inner">
+      <div class="calc-texto">
+        <div class="linha-amarela"></div>
+        <h2>Descubra quanto você<br><em>pode economizar</em> por mês</h2>
+        <p>Use nossa calculadora e veja em segundos o potencial de economia da energia solar no seu caso. Sem cadastro, sem compromisso.</p>
+        <div class="calc-selos">
+          <span class="calc-selo"><i class="fa-solid fa-leaf"></i> Energia limpa</span>
+          <span class="calc-selo"><i class="fa-solid fa-shield-halved"></i> 25 anos de garantia</span>
+          <span class="calc-selo"><i class="fa-solid fa-piggy-bank"></i> Retorno em até 4 anos</span>
+        </div>
+      </div>
+
+      <div class="calc-card">
+        <h3>Calculadora de Economia Solar</h3>
+        <p>Arraste o slider com o valor da sua conta atual</p>
+
+        <div class="calc-label">
+          <span>Valor da sua conta de luz</span>
+          <span class="calc-valor-conta" id="calcContaLabel">R$ 400</span>
+        </div>
+        <input type="range" class="calc-slider" id="calcSlider" min="100" max="5000" step="50" value="400" />
+
+        <div class="calc-resultados">
+          <div class="calc-res destaque">
+            <strong id="calcEconomia">R$ 380</strong>
+            <span>Economia estimada por mês</span>
+          </div>
+          <div class="calc-res">
+            <strong id="calcAnual">R$ 4.560</strong>
+            <span>Economia em 1 ano</span>
+          </div>
+          <div class="calc-res">
+            <strong id="calcRetorno">~4 anos</strong>
+            <span>Retorno do investimento</span>
+          </div>
+        </div>
+
+        <div class="calc-co2">
+          <i class="fa-solid fa-tree"></i>
+          <span id="calcCo2">Você evitaria ~2,1 toneladas de CO₂ por ano</span>
+        </div>
+
+        <a href="contato.html" class="btn btn-primary btn-full">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          Quero meu orçamento gratuito
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- SERVIÇOS (resumo) -->
   <section class="section section-alt">
     <div class="container">
@@ -171,6 +233,70 @@
       </div>
     </div>
   </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="section">
+    <div class="container">
+      <div class="linha-amarela"></div>
+      <h2 class="section-title">O que dizem nossos clientes</h2>
+      <p class="section-sub">Mais de 5 anos economizando na conta de energia de quem confiou na gente</p>
+      <div class="depoimentos-grid">
+        <div class="depoimento-card fade-up">
+          <span class="depoimento-aspas">"</span>
+          <p class="depoimento-texto">Minha conta era R$ 780 todo mês. Depois da instalação caiu para menos de R$ 50 — só a taxa mínima. O retorno foi muito mais rápido do que eu esperava.</p>
+          <div class="depoimento-autor">
+            <div class="avatar" style="background:#1A72C8;">RC</div>
+            <div class="autor-info">
+              <strong>Roberto C.</strong>
+              <span>Residencial · Águas Claras, DF</span>
+              <div class="estrelas">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimento-card fade-up">
+          <span class="depoimento-aspas">"</span>
+          <p class="depoimento-texto">Tenho uma clínica em Taguatinga e o ar-condicionado rodava 10h por dia. Hoje economizo R$ 1.900 por mês. A equipe cuidou de tudo, desde o projeto até a homologação.</p>
+          <div class="depoimento-autor">
+            <div class="avatar" style="background:#0C3D8C;">AF</div>
+            <div class="autor-info">
+              <strong>Dra. Ana F.</strong>
+              <span>Comercial · Taguatinga, DF</span>
+              <div class="estrelas">★★★★★</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="depoimento-card fade-up">
+          <span class="depoimento-aspas">"</span>
+          <p class="depoimento-texto">Minha fazenda ficava sem luz e eu gastava muito com gerador a diesel. Hoje tenho sistema Off-Grid e nunca mais dependi da rede. Decisão que mudou a propriedade.</p>
+          <div class="depoimento-autor">
+            <div class="avatar" style="background:#a07800;">JM</div>
+            <div class="autor-info">
+              <strong>João M.</strong>
+              <span>Rural · Planaltina, GO</span>
+              <div class="estrelas">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARCAS PARCEIRAS -->
+  <div class="marcas-section">
+    <div class="container">
+      <p class="marcas-label">Equipamentos das melhores marcas do mercado</p>
+      <div class="marcas-grid">
+        <div class="marca-chip"><i class="fa-solid fa-solar-panel"></i> Canadian Solar</div>
+        <div class="marca-chip"><i class="fa-solid fa-solar-panel"></i> Fronius</div>
+        <div class="marca-chip"><i class="fa-solid fa-solar-panel"></i> WEG</div>
+        <div class="marca-chip"><i class="fa-solid fa-solar-panel"></i> Growatt</div>
+        <div class="marca-chip"><i class="fa-solid fa-solar-panel"></i> Intelbras</div>
+        <div class="marca-chip"><i class="fa-solid fa-solar-panel"></i> BYD</div>
+      </div>
+    </div>
+  </div>
 
   <!-- CTA BANNER -->
   <section class="cta-banner">
