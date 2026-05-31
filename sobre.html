@@ -298,9 +298,8 @@
       document.addEventListener('contextmenu', function(e) { e.preventDefault(); showMsg(); });
       document.addEventListener('keydown', function(e) {
         var k = e.key ? e.key.toLowerCase() : '';
-        var blocked = (e.ctrlKey && ['u','s','a','p'].includes(k)) ||
-          (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(k)) || k === 'f12';
-        if (blocked) { e.preventDefault(); if (['u','f12','i','j'].includes(k)) showMsg(); }
+        var blocked = (e.ctrlKey && ['u','s','a','p'].includes(k));
+        if (blocked) { e.preventDefault(); if (k === 'u') showMsg(); }
       });
       document.addEventListener('dragstart', function(e) {
         if (e.target.tagName === 'IMG') e.preventDefault();
@@ -309,6 +308,7 @@
   </script>
 </body>
 </html>
+
 
 
 
