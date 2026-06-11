@@ -1,6 +1,6 @@
 # Static file server for Distrito Solar
 $port = 3458
-$root = "C:\Users\GABRIELY\OneDrive\Documentos\distrito-solar"
+$root = $PSScriptRoot
 $listener = [System.Net.HttpListener]::new()
 $listener.Prefixes.Add("http://localhost:$port/")
 $listener.Start()

@@ -3,9 +3,9 @@
   "configurations": [
     {
       "name": "distrito-solar",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", ".", "--listen", "3500", "--no-clipboard"],
-      "port": 3500
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "serve.ps1"],
+      "port": 3458
     }
   ]
 }

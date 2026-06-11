@@ -157,7 +157,8 @@
       </div>
 
       <div class="hero-visual">
-        <div class="solar-wrap">
+        <div class="solar-wrap" id="hero3dWrap">
+          <canvas id="hero3dCanvas" aria-hidden="true"></canvas>
           <div class="panel-glow"></div>
           <div class="panel-grid">
             <div class="panel-cell lit"></div><div class="panel-cell"></div><div class="panel-cell lit"></div><div class="panel-cell"></div><div class="panel-cell lit"></div>
@@ -622,7 +623,10 @@
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/hero3d.js"></script>
+  <script src="js/scroll3d.js"></script>
 
   <!-- JS PROTEÇÃO -->
   <div id="_protectToast">© Conteúdo protegido — todos os direitos reservados</div>
