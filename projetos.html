@@ -15,27 +15,6 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <!-- PROTEÇÃO DE CONTEÚDO -->
-  <style>
-    img { -webkit-user-drag: none; user-drag: none; pointer-events: none; }
-    a, button, input, label, select, textarea, [onclick] { pointer-events: all !important; }
-    ::selection { background: transparent; }
-    ::-moz-selection { background: transparent; }
-    body, p, h1, h2, h3, h4, h5, h6, span, li, td, th, div {
-      -webkit-user-select: none; -moz-user-select: none; user-select: none;
-    }
-    input, textarea { -webkit-user-select: text !important; user-select: text !important; }
-    #_protectToast {
-      position: fixed; bottom: 24px; left: 50%;
-      transform: translateX(-50%) translateY(70px); z-index: 99999;
-      background: #0d1f2d; color: rgba(255,255,255,.75); font-size: 13px;
-      font-family: sans-serif; font-weight: 300; padding: 13px 22px;
-      border-radius: 3px; border: 1px solid rgba(255,255,255,.12);
-      white-space: nowrap; pointer-events: none;
-      transition: transform .35s cubic-bezier(.16,1,.3,1), opacity .35s; opacity: 0;
-    }
-    #_protectToast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -305,28 +284,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/scroll3d.js"></script>
-
-  <div id="_protectToast">© Conteúdo protegido — todos os direitos reservados</div>
-  <script>
-    (function() {
-      function showMsg() {
-        var t = document.getElementById('_protectToast');
-        if (!t) return;
-        t.classList.add('show');
-        clearTimeout(t._timer);
-        t._timer = setTimeout(function() { t.classList.remove('show'); }, 2800);
-      }
-      document.addEventListener('contextmenu', function(e) { e.preventDefault(); showMsg(); });
-      document.addEventListener('keydown', function(e) {
-        var k = e.key ? e.key.toLowerCase() : '';
-        var blocked = (e.ctrlKey && ['u','s','a','p'].includes(k));
-        if (blocked) { e.preventDefault(); if (k === 'u') showMsg(); }
-      });
-      document.addEventListener('dragstart', function(e) {
-        if (e.target.tagName === 'IMG') e.preventDefault();
-      });
-    })();
-  </script>
 </body>
 </html>
 

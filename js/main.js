@@ -250,7 +250,7 @@ if (slider) {
     document.getElementById('calcCo2').textContent =
       'Você evitaria ~' + co2 + ' toneladas de CO₂ por ano';
 
-    const pct = ((conta - 100) / (5000 - 100)) * 100;
+    const pct = ((conta - 300) / (5000 - 300)) * 100;
     slider.style.background =
       `linear-gradient(90deg, var(--azul) ${pct}%, #dde3f0 ${pct}%)`;
   }
