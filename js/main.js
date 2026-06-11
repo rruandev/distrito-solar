@@ -197,7 +197,7 @@ const statsObserver = new IntersectionObserver((entries) => {
     if (!entry.isIntersecting) return;
     const el = entry.target;
     const text = el.textContent.trim();
-    if (text === '+5')  animateCounter(el, 5, '+');
+    if (text === '+6')  animateCounter(el, 6, '+');
     if (text === '4')   animateCounter(el, 4, '');
     if (text === '95%') { el.textContent = '0%'; animateCounter(el, 95, '%'); }
     statsObserver.unobserve(el);
@@ -239,14 +239,14 @@ if (slider) {
     const conta = +slider.value;
     const economia = Math.max(conta - TAXA_MINIMA, 0);
     const anual = economia * 12;
-    const custoEstimado = conta * 18;
+    const custoEstimado = conta * 42; // custo médio do sistema (~3,5 a 4 anos de retorno)
     const retornoAnos = Math.round(custoEstimado / anual * 10) / 10;
     const co2 = (economia * 12 * 0.09 / 1000).toFixed(1);
 
     document.getElementById('calcContaLabel').textContent = fmt(conta);
     document.getElementById('calcEconomia').textContent = fmt(economia);
     document.getElementById('calcAnual').textContent = fmt(anual);
-    document.getElementById('calcRetorno').textContent = '~' + retornoAnos + ' anos';
+    document.getElementById('calcRetorno').textContent = ('~' + retornoAnos + ' anos').replace('.', ',');
     document.getElementById('calcCo2').textContent =
       'Você evitaria ~' + co2 + ' toneladas de CO₂ por ano';
 
