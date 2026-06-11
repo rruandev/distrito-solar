@@ -233,9 +233,11 @@ const slider = document.getElementById('calcSlider');
 if (slider) {
   const fmt = v => 'R$ ' + v.toLocaleString('pt-BR');
 
+  const TAXA_MINIMA = 47; // taxa mínima média da distribuidora
+
   function updateCalc() {
     const conta = +slider.value;
-    const economia = Math.round(conta * 0.95);
+    const economia = Math.max(conta - TAXA_MINIMA, 0);
     const anual = economia * 12;
     const custoEstimado = conta * 18;
     const retornoAnos = Math.round(custoEstimado / anual * 10) / 10;
