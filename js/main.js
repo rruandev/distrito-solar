@@ -99,7 +99,7 @@ if (form) {
     if (conta)    msg += `*Conta de luz:* R$${encodeURIComponent(conta)}%0A`;
     if (mensagem) msg += `*Mensagem:* ${encodeURIComponent(mensagem)}%0A`;
 
-    window.open(`https://wa.me/5561991361380?text=${msg}`, '_blank');
+    window.open(`https://wa.me/5561991361381?text=${msg}`, '_blank');
 
     // Mostra mensagem de sucesso
     form.style.display = 'none';
